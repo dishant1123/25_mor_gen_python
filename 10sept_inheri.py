@@ -49,18 +49,18 @@ c.show()
 """
 # single level  inheritance  with encapsulation  : 
 
-class vehicle : 
-    def __init__(self):
-        self.__type ="4 wheeler"
-        self.__capacity_seat =5 
+"""class vehicle : 
+    def __init__(self,v_type,capacity_seat):
+        self.__type =v_type
+        self.__capacity_seat = capacity_seat
     def gettype(self):
         return self.__type
     def getcapacity(self):
         return self.__capacity_seat
 
 class car(vehicle):
-    def __init__(self,name,model):
-        super().__init__()
+    def __init__(self,name,model,v_type,capacity_seat):
+        super().__init__(v_type,capacity_seat)
         self.name =name 
         self.model =model
     
@@ -70,5 +70,31 @@ class car(vehicle):
         print("name is  : ",self.name)
         print("model is  :",self.model)
 
-c=car("audi","A3")
+c=car("audi","A3","4-wheeler",5)
 c.show() 
+"""
+
+#multiple level inheritance : 
+"""
+class a: 
+
+class b :
+
+class c(a,b):
+
+"""
+
+class student : 
+    def display(self):
+        print("student class ")
+
+class address:
+    def show(self):
+        print("address class ")
+
+class clg(student,address):
+    pass 
+
+c=clg()
+c.display()   # ==> student 
+c.show() # ==> address 
