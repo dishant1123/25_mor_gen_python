@@ -45,12 +45,12 @@ with  open("purvesh.txt","a") as file:
 
 # read mode  : 
 
-with open("purvesh.txt","r") as file:
+"""with open("purvesh.txt","r") as file:
     # context = file.read()  # all context read 
     # context = file.readline()  # only  first  line  read 
     context =file.readlines()
     print(context)
-
+"""
 # task  : 
 """
 ask user  to enter the  string  and print  the  seprate  file of vowel  and consonant.
@@ -62,3 +62,60 @@ consonant.txt = my n s stym
 
 
 """
+
+
+# file : txt file 
+"""
+1. read : file  exiting file  open 
+2. write  :  new file create  +  write  +  exiting  file  ==>  overwrite  
+3. append : new file create  +  write  +  exiting  file  ==>  append 
+"""
+
+# w : new  crete  +write  
+
+"""
+with  open("devang.txt","w") as file :
+    file.write("hello devang.\n")
+    file.write("live in ahmedabad.\n")
+    file.write("study in GROW MORE.\n")
+    file.write("best friend name is  ketan.\n")
+    file.close()
+"""
+
+# w :exiting  file  
+
+"""with  open("devang.txt","w") as file :
+    file.write("born in palanpur.\n")
+    file.write("study  in ROYAL.\n")
+    file.write("food lover.\n")
+    file.close()
+"""
+
+# a : append  
+
+"""with  open("ketan.txt","a") as file :
+    file.write("hello ketan.\n")
+    file.write("live in ahmedabad.\n")
+    file.write("study in GROW MORE.\n")
+    file.write("best friend name is  devang.\n")
+    file.close()
+"""
+
+# exiting  file  open in append mode : 
+
+"""with  open("ketan.txt","a") as file :
+    file.write("ketan is  very intelligent.\n")
+    file.write("cricket lover.\n")
+    file.close()
+"""
+
+# read  mode  : 
+with  open("devang.txt","r") as file :
+    # context = file.read()  # read all context
+    # c = file.readline()  # read only first line
+    # print(c)
+    c =file.readlines()
+    print(c)
+    
+    # print(context)
+    file.close()
