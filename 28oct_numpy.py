@@ -58,9 +58,32 @@ print(c)
 Get the following array using intrinsic methods and slicing:
 1 1 1 1 1  
 1 0 0 0 1 
-1 0 9 0 1 
+1 0 9 0 1   # 2,2=9
 1 0 0 0 1
 1 1 1 1 1 
 
 # hint  :  function  ones(), slicing   
 """
+# solution  :
+"""
+x=np.ones((5,5),dtype=int)
+x[1:4,1:4]=np.zeros((3,3),dtype=int)
+x[2,2]=9
+print(x)
+"""
+
+c=np.random.randint(low=0,high=10,size=9).reshape(3,3) 
+print(c)
+
+print(c.shape)   # array size  ==> row  col 
+print(c.ndim)    # array dimention  ==> one d , 2 d 
+print(c.size) 
+print(c.itemsize)
+
+print(c.T)  # traspose 
+print(c.sum())
+print(c.sum(axis=0) ) #axis  =0   ==>row wise
+print(c.sum(axis=1) ) #axis  =1   ==>col wise
+
+# aithematic : + - * / % 
+print(c+10)
