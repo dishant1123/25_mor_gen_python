@@ -30,6 +30,7 @@ print(df)
 """
 
 # print(df)
+"""
 df["new_index"]=np.arange(5,1709)
 print(df)
 
@@ -38,3 +39,4 @@ print(df.index.values)
 
 df.index=np.arange(5,1709)
 print(df)
+"""
