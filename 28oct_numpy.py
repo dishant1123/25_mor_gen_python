@@ -72,7 +72,7 @@ x[2,2]=9
 print(x)
 """
 
-c=np.random.randint(low=0,high=10,size=9).reshape(3,3) 
+"""c=np.random.randint(low=0,high=10,size=9).reshape(3,3) 
 print(c)
 
 print(c.shape)   # array size  ==> row  col 
@@ -87,3 +87,19 @@ print(c.sum(axis=1) ) #axis  =1   ==>col wise
 
 # aithematic : + - * / % 
 print(c+10)
+"""
+
+"""a= np.zeros((3,5))  # print  0 array  size will  3,5
+b=np.ones((2,4))  # print  1 array  size will 2,4
+
+c= np.full((2,4),fill_value=10)
+print(a)
+print(b)
+print(c)
+"""
+
+a=np.random.randint(-10,10,size=(3,3))
+b=np.random.random(size=9).reshape(3,3)
+
+print(a)
+print(b)

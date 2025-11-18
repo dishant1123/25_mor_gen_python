@@ -25,7 +25,7 @@ print(d)
 # slicing  ==>  array[start:end:step]
 
 
-a= np.array([
+"""a= np.array([
     [1,2,3,4,5,6,7],
     [8,9,10,11,12,13,14],
     [21,22,1,23,44,56,76],
@@ -37,7 +37,7 @@ print(a[1,2:4])
 print(a[3, : ])
 print(a[0,: : -1])
 print(a[1:3,2:6])  # 1:3 
-
+"""
 
 # manupulating array  using index  : 
 """c= np.array([12.45,78.90,34.56,23.45,12.34,56.78,89.90,12],dtype=float)
@@ -63,3 +63,9 @@ print(d)
 e= b.reshape(4,4)
 print(e)
 """
+
+"""a= np.array([1,2,3,4,5,6])
+a[2]=123
+print(a)
+"""
+
