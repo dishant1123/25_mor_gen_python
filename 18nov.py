@@ -32,7 +32,6 @@ print(revenue_by_director)
 print(total_revenue_per_director_oneliner)
 """
 
-
 recent_movies_df = df[df['year'] > 2010]
 total_revenue_and_year_per_director = recent_movies_df.groupby('director_name').agg(
     Total_Revenue_Post_2010=('revenue', 'sum'),
@@ -42,3 +41,12 @@ total_revenue_and_year_per_director = recent_movies_df.groupby('director_name').
 print(total_revenue_and_year_per_director)
 
 # task :3 Average vote of movies per director, only movies with > 5000 votes.
+
+#task  :4. Total budget per month (only high-budget movies > 200M) 
+
+# task  :5 Count of movies per director (only directors with ≥ 3 movies)  
+
+# task :6 Directors sorted by total revenue (highest first) 
+
+# task  :7 Directors with total revenue > 1B sorted descending
+
