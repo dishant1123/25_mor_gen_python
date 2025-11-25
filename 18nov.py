@@ -51,7 +51,6 @@ total_revenue_and_year_per_director = recent_movies_df.groupby('director_name').
 # task  :7 Directors with total revenue > 1B sorted descending
 
 
-
 #task  :4. Total budget per month (only high-budget movies > 200M) 
 
 """
@@ -61,10 +60,15 @@ print(result)
 
 # task  :5 Count of movies per director (only directors with ≥ 3 movies)  
 
+"""
 movie_count = df.groupby("director_name")['title'].count().reset_index()
 # print(movie_count)
-
 result = movie_count[movie_count['title']>5]
 print(result)
+"""
+# task:5.1 ==>count  of movies  per director  for  only male or female  
 
-# task:6 count  of movies  per director  for  only male or female  
+# task :6 Directors sorted by total revenue (highest first) 
+
+result = df.groupby("director_name")["revenue"].sum().reset_index().sort_values(by="revenue",ascending=False)
+print(result)

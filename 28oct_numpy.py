@@ -97,9 +97,3 @@ print(a)
 print(b)
 print(c)
 """
-
-a=np.random.randint(-10,10,size=(3,3))
-b=np.random.random(size=9).reshape(3,3)
-
-print(a)
-print(b)
