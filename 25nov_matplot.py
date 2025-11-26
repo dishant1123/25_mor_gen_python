@@ -41,8 +41,33 @@ plt.show()
 
 # pie chart :
 
-data = [10,20,30,40,50]
+"""data = [10,20,30,40,50]
 
 plt.pie(data,labels=["apple","banana","orange","grape","watermelon"])
 plt.title("Pie Chart")
 plt.show()
+"""
+
+# barhis : 
+
+"""languges = ["C","C++","Java","Python","R"]
+popularity =[90,75,60,80,100]
+
+plt.barh(languges,popularity)
+plt.xlabel("popularity")
+plt.title("histogram bar charts")
+plt.show()
+"""
+
+# area charts :
+
+x=[1,2,3,4,5]
+sales =[20,30,40,50,60]
+
+plt.fill_between(x,sales,color="red",alpha=0.5)
+plt.plot(x,sales)
+plt.show()
+
+
+
+
