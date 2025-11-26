@@ -25,3 +25,29 @@ plt.show()
 
 # task :1 profit by segment :
 # task :2 city wise  profit :
+
+# top 10 profitable  product : 
+"""least_profit =df.groupby("Product Name")["Profit"].sum().sort_values(ascending=False).head(10)
+
+plt.figure(figsize=(10,5))
+least_profit.plot(kind="bar")
+plt.title("Top 10 profitable product")
+plt.xlabel("product")
+plt.ylabel("Profit")
+plt.xticks(rotation=90)
+plt.tight_layout()
+plt.show()
+"""
+
+# profit vs  discout scatter plot 
+
+plt.figure(figsize=(10,5))
+plt.scatter(df["Profit"],df["Discount"])
+plt.xlabel("Discount")
+plt.ylabel("Profit")
+plt.title("Profit vs Discount")
+plt.show()
+
+# task  :3  profit vs  sales scatter plot
+# task :4 sub category wise  profit 
+
