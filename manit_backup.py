@@ -9,7 +9,7 @@ a= np.array([
 ])
 
 a[0] =[45,67,89,23,89]
-print(a)
+# print(a)
 
 """print(a)
 print(a[0])
@@ -49,3 +49,26 @@ task :1
 [1,1,1,1,1]]
 
 """
+# random  : 
+import  random 
+
+# a=np.random.random((3,4))  # 0-1 float 
+# print(a)
+
+# b=np.random.randint(low=-10,high=10,size=12).reshape(4,3)
+# print(b)
+
+# c=np.random.sample((5,))
+# print(c)
+
+a=np.random.randint(low=-10,high=100,size=16).reshape(4,4)
+b=np.random.randint(low=-10,high=100,size=16).reshape(4,4)
+print("a matrix :\n",a)
+print("b matix :\n",b)  
+
+# print("addition of two matrix :\n",a+b)
+# print("sub of two matrix :\n",a-b)
+
+# print("multiplication of two matrix :\n",a*b)  # not  matrix multiplication
+
+print(np.matmul(a,b))
