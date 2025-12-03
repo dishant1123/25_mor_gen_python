@@ -61,14 +61,52 @@ import  random
 # c=np.random.sample((5,))
 # print(c)
 
-a=np.random.randint(low=-10,high=100,size=16).reshape(4,4)
-b=np.random.randint(low=-10,high=100,size=16).reshape(4,4)
-print("a matrix :\n",a)
-print("b matix :\n",b)  
+# a=np.random.randint(low=-10,high=100,size=16).reshape(4,4)
+# b=np.random.randint(low=-10,high=100,size=16).reshape(4,4)
+# print("a matrix :\n",a)
+# print("b matix :\n",b)  
 
 # print("addition of two matrix :\n",a+b)
 # print("sub of two matrix :\n",a-b)
 
 # print("multiplication of two matrix :\n",a*b)  # not  matrix multiplication
 
-print(np.matmul(a,b))
+# print(np.matmul(a,b))
+
+"""
+x=np.random.randint(low=-30,high=30,size=16).reshape(4,4)
+print(x)
+print(x.size)
+print(x.shape)
+print(x.ndim)
+print(x.itemsize)
+print(x.T)
+"""
+# mathematical operation  : 
+"""
+axis =0 column wise 
+axis =1 row wise
+"""
+"""x=np.random.randint(low=-30,high=30,size=16).reshape(4,4)
+print(x)
+print(x.sum())
+print(x.sum(axis=0)) # col wise  sum 
+print(x.sum(axis=1)) # row wise  sum 
+"""
+
+"""
+c= np.random.randint(low=-10,high=10,size=10)
+
+print(c)
+print(np.where(c>0))
+
+print(np.count_nonzero(c))
+print(np.nonzero(c))
+"""
+# vstack :
+
+c= np.random.randint(low=-10,high=10,size=10).reshape(2,5)
+d= np.random.randint(low=-10,high=10,size=10).reshape(2,5)
+
+# print(np.vstack((c,d)))
+print(np.hstack((c,d)))
