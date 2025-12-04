@@ -37,8 +37,38 @@ ih= df.loc[df['Name']=="Ice Hockey"]
 # print(ih)
 
 
+"""
 sns.lineplot(data=ih,x="Year",y="NA_Sales")
 plt.title("Ice Hockey Sales in NA")
 plt.ylabel("Sales")
 plt.grid(True)
+plt.show()
+"""
+
+# sales of NEED FOR SPEED in NA region (NA_Sales)
+
+# sales trend  in ICE HOCKEY in north amrecia region   ===>  trnd  line  ==> line plot 
+
+# top  3 publisher ,top3 genres , top 3 platforms
+
+nfs =df.loc[(df['Name'].str.contains("Need For Speed"))| (df['Name'].str.contains("Need For Speed"))]
+
+# print(nfs)
+
+# sns.lineplot(data=nfs,x=nfs["Year"],y=nfs["Global_Sales"])
+# plt.title("Need For Speed Sales in NA")
+# plt.ylabel("Sales")
+# plt.grid(True)
+# plt.show()
+
+base_ball =df.loc[df['Name']=="Baseball"]
+print(base_ball)
+
+sns.lineplot(data=base_ball,x=base_ball["Year"],y=base_ball["NA_Sales"],label="Baseball",color="red",marker="o")
+sns.lineplot(data=ih,x="Year",y="NA_Sales",label="Ice Hockey",color="blue",marker="o")
+plt.title("comparison between ice hockey and baseball sales in north america")
+plt.ylabel("Sales")
+plt.xlabel("Year")
+plt.grid(True)
+# plt.legend(loc="upper left")
 plt.show()
