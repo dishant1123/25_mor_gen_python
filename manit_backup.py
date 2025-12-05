@@ -105,8 +105,20 @@ print(np.nonzero(c))
 """
 # vstack :
 
-c= np.random.randint(low=-10,high=10,size=10).reshape(2,5)
+"""c= np.random.randint(low=-10,high=10,size=10).reshape(2,5)
 d= np.random.randint(low=-10,high=10,size=10).reshape(2,5)
-
+"""
 # print(np.vstack((c,d)))
-print(np.hstack((c,d)))
+# print(np.hstack((c,d)))
+
+
+# load from txt : 
+
+"""a= np.loadtxt("manit_info.txt",dtype=str,delimiter="\t")
+print(a)
+"""
+
+# gen from txt :
+
+a=np.genfromtxt("manit_info.txt",dtype=None,delimiter=",",filling_values=-1,encoding="UTF-8",names=True)
+print(a)
