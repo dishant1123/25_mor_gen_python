@@ -61,7 +61,7 @@ nfs =df.loc[(df['Name'].str.contains("Need For Speed"))| (df['Name'].str.contain
 # plt.grid(True)
 # plt.show()
 
-base_ball =df.loc[df['Name']=="Baseball"]
+"""base_ball =df.loc[df['Name']=="Baseball"]
 print(base_ball)
 
 sns.lineplot(data=base_ball,x=base_ball["Year"],y=base_ball["NA_Sales"],label="Baseball",color="red",marker="o")
@@ -71,4 +71,18 @@ plt.ylabel("Sales")
 plt.xlabel("Year")
 plt.grid(True)
 # plt.legend(loc="upper left")
+plt.show()
+"""
+
+top3_publishers = df["Publisher"].value_counts().index[:3]
+top3_genres = df["Genre"].value_counts().index[:3]
+top3_platforms = df["Platform"].value_counts().index[:3]
+top3_data = df.loc[df["Publisher"].isin(top3_publishers) & df["Genre"].isin(top3_genres) & df["Platform"].isin(top3_platforms)]
+# print(top3_data)
+
+# sns.jointplot(data=top3_data, x="NA_Sales", y="JP_Sales")
+
+# sns.scatterplot(data=top3_data, x="NA_Sales", y="JP_Sales",hue="Genre",size="Global_Sales",sizes=(1,100))
+
+sns.boxplot(data=top3_data, x="Publisher", y="Global_Sales",hue="Genre")
 plt.show()
