@@ -1,0 +1,3 @@
+name,age,salary 
+manit,, 
+satyam,24,20000
