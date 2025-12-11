@@ -25,4 +25,39 @@ a=pd.DataFrame([
     ['e',73,70000789]
     ],columns=['name','age','salary']
 )
-print(a)
+# print(a)
+
+b=pd.DataFrame({
+    "name":["devang","maint","nirmit","ketali"], 
+    "age" :[20,19,19,21],
+    "salary" :[90000,89000,95000,79000]  
+})
+# print(b)
+# print(b.columns)
+# print(b.keys())
+# print(b.values)
+
+# column name change  : 
+"""b=b.rename(columns={
+    "name" :"Name",
+    "age" :"Age"
+})
+"""
+# print(b)
+# rename  column name  :
+b.rename(
+           {"name" :"First_name",
+            "age" :"Age"
+            },axis =1,inplace=True)
+
+# print(b)
+
+# add column in data frame : 
+b["Gender"] =["M","M","M","F"]
+# print(b)
+
+# drop  : delete column 
+
+# print(b.drop("Age",axis =1))
+# print(b.drop(["Age","Gender"],axis =1))
+print(b.drop(columns=["Age","Gender"]))
