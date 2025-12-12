@@ -1,4 +1,5 @@
 import pandas as pd 
+import numpy as np
 
 df =pd.read_csv("mckinsey.csv")
 # print(df)
@@ -60,4 +61,21 @@ b["Gender"] =["M","M","M","F"]
 
 # print(b.drop("Age",axis =1))
 # print(b.drop(["Age","Gender"],axis =1))
-print(b.drop(columns=["Age","Gender"]))
+# print(b.drop(columns=["Age","Gender"]))
+
+
+# task  :1 year +3  
+# unique : remove  duplicate  
+
+"""
+print(df["country"].unique())
+print(df["country"].nunique())
+print(df["country"].value_counts())
+"""
+
+"""df["GDP"] =df["population"]*df["gdp_cap"]
+print(df)
+"""
+
+df["New_index"]=np.arange(5,1709)
+print(df)
