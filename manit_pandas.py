@@ -77,5 +77,57 @@ print(df["country"].value_counts())
 print(df)
 """
 
-df["New_index"]=np.arange(5,1709)
+"""df["New_index"]=np.arange(5,1709)
 print(df)
+"""
+"""df.index = np.arange(5,1709)
+print(df)
+
+"""
+
+# implict , explict : 
+"""
+implicit ==> always start with 0.  ==>iloc 
+explict ==> we can define it as we want (what is seen in output dataframe) it can be float, string whatever we want.  ==> loc 
+"""
+
+# print(df.head(20))
+# print(df["country"][16])
+# print(df.index[16])
+
+"""df.index=np.arange(1,1705)
+print(df)
+
+temp =df.head(5)
+
+temp.index =["a","b","c","d","e"]
+print(temp)
+"""
+
+cont =df["country"]
+# print(cont)
+
+# print(cont.head(20))
+# print(cont[13])
+# print(cont[5:13])
+
+# loc :explicit 
+# iloc :implicit 
+
+# print(cont.loc[13])
+# print(cont.iloc[13])
+
+# print(cont.loc[1])
+# print(cont.iloc[1])
+
+# slicing :
+
+# print(cont.loc[1 :5])  #loc included both start and end. 
+# print(cont.iloc[1 :5])  #iloc excluded lat value. 
+
+# print(df.loc[2:5,"year":"continent"])
+# print(df.iloc[2:5,0:4])
+
+# print(df.loc[2:5,["country","year","gdp_cap"]])
+
+print(df.iloc[[1,4,6,7],[0,3,4]])
