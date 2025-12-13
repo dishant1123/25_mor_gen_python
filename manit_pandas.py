@@ -130,4 +130,6 @@ cont =df["country"]
 
 # print(df.loc[2:5,["country","year","gdp_cap"]])
 
-print(df.iloc[[1,4,6,7],[0,3,4]])
+# print(df.iloc[[1,4,6,7],[0,3,4]])
+
+print(df.iloc[1:10:2])
