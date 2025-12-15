@@ -177,5 +177,11 @@ print(msgs)
 # result=pd.concat([users,msgs])
 # result=pd.concat([users,msgs],axis=1)
 
-result=pd.merge(msgs,users,on="user_id")
-print(result)
+# result=pd.merge(msgs,users,on="user_id")
+# result=pd.merge(msgs,users,left_on="user_id",right_on="user_id",how="left")
+result=pd.merge(msgs,users,left_on="user_id",right_on="user_id",how="right")
+result=pd.merge(msgs,users,left_on="user_id",right_on="user_id",how="outer")
+
+
+print(result) 
+
