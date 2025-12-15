@@ -132,4 +132,50 @@ cont =df["country"]
 
 # print(df.iloc[[1,4,6,7],[0,3,4]])
 
-print(df.iloc[1:10:2])
+# print(df.iloc[1:10:2]) 
+
+#=================
+"""
+sorting data frame
+"""
+
+"""
+a =df.sort_values(by="year",ascending=False)
+print(a)
+
+b= df.sort_values(by="gdp_cap",ascending=True).head(20)
+print(b)
+
+c=df.sort_values(by=["year","life_exp"]).head(50)
+print(c)
+
+d=df.sort_values(by=["year","life_exp"],ascending=False).head(50)
+print(d)
+
+e=df.sort_values(by=["year","life_exp"],ascending=[True,False])
+print(e)
+"""
+
+"""
+join :
+"""
+
+users =pd.DataFrame({
+    "user_id":[1,2,3],
+    "name":["devang","nirmit","ketali"]
+})
+print(users)
+
+msgs =pd.DataFrame({
+  "user_id":[1,1,2,4],
+  "msgs":['hmm','achha','ok','yup'] 
+    
+})
+
+print(msgs)
+
+# result=pd.concat([users,msgs])
+# result=pd.concat([users,msgs],axis=1)
+
+result=pd.merge(msgs,users,on="user_id")
+print(result)
