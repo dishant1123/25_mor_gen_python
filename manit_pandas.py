@@ -67,8 +67,8 @@ b["Gender"] =["M","M","M","F"]
 # task  :1 year +3  
 # unique : remove  duplicate  
 
-"""
-print(df["country"].unique())
+
+"""print(df["country"].unique())
 print(df["country"].nunique())
 print(df["country"].value_counts())
 """
@@ -104,7 +104,7 @@ temp.index =["a","b","c","d","e"]
 print(temp)
 """
 
-cont =df["country"]
+# cont =df["country"]
 # print(cont)
 
 # print(cont.head(20))
@@ -159,7 +159,7 @@ print(e)
 """
 join :
 """
-
+"""
 users =pd.DataFrame({
     "user_id":[1,2,3],
     "name":["devang","nirmit","ketali"]
@@ -172,16 +172,61 @@ msgs =pd.DataFrame({
     
 })
 
-print(msgs)
+print(msgs)"""
 
 # result=pd.concat([users,msgs])
 # result=pd.concat([users,msgs],axis=1)
 
 # result=pd.merge(msgs,users,on="user_id")
 # result=pd.merge(msgs,users,left_on="user_id",right_on="user_id",how="left")
-result=pd.merge(msgs,users,left_on="user_id",right_on="user_id",how="right")
-result=pd.merge(msgs,users,left_on="user_id",right_on="user_id",how="outer")
+# result=pd.merge(msgs,users,left_on="user_id",right_on="user_id",how="right")
+# result=pd.merge(msgs,users,left_on="user_id",right_on="user_id",how="outer")
 
 
-print(result) 
+# print(result) 
+
+#============================
+"""
+df["GDP"] =df["population"]*df["gdp_cap"]
+print(df)
+"""
+# new  index set : 
+
+"""df["new_index"]=np.arange(5,1709)
+print(df)
+"""
+"""df.index = np.arange(5,1709)
+print(df)
+
+print(df.index.values)
+print(df.value_counts())
+"""
+
+# implicit : start from  0
+# explict :we can define it as we want 
+
+# print(df.head(20))
+# print(df["country"][11])
+# print(df.index[16])
+
+"""df.index =np.arange(1,1705,dtype=float)
+print(df)
+
+temp =df.head()
+temp.index=["a","b","c","d","e"]
+print(temp)
+"""
+
+"""cont =df["country"]
+print(cont.head(20))
+
+print(cont[13])
+print(cont[5 :13])
+"""
+
+# print(df.loc[13])
+# print(df.iloc[13])
+
+# print(df.loc[2 :13,"country":"continent"])
+print(df.iloc[2 :13,1:3])  # last  number excluded it 
 
