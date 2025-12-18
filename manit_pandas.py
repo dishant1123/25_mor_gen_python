@@ -228,5 +228,23 @@ print(cont[5 :13])
 # print(df.iloc[13])
 
 # print(df.loc[2 :13,"country":"continent"])
-print(df.iloc[2 :13,1:3])  # last  number excluded it 
+# print(df.iloc[2 :13,1:3])  # last  number excluded it 
 
+movies =pd.read_csv("movies.csv")
+movies.drop(columns="Unnamed: 0",inplace=True)
+# print(movies)
+
+directors =pd.read_csv("directors.csv")
+directors.drop(columns="Unnamed: 0",inplace=True)
+# print(directors)
+
+#Get me the number of directors who did not produce any movie ever.
+print(movies["director_id"].nunique())
+print(directors["id"].nunique())
+print("directors who did not produce any movie ever:",directors["id"].nunique()-movies["director_id"].nunique())
+
+
+"""
+Get the output similar to the following SQL query:
+select * from movies where vote_average > 7
+"""
