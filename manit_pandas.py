@@ -230,21 +230,68 @@ print(cont[5 :13])
 # print(df.loc[2 :13,"country":"continent"])
 # print(df.iloc[2 :13,1:3])  # last  number excluded it 
 
-movies =pd.read_csv("movies.csv")
-movies.drop(columns="Unnamed: 0",inplace=True)
+# movies =pd.read_csv("movies.csv")
+# movies.drop(columns="Unnamed: 0",inplace=True)
 # print(movies)
 
-directors =pd.read_csv("directors.csv")
-directors.drop(columns="Unnamed: 0",inplace=True)
+# directors =pd.read_csv("directors.csv")
+# directors.drop(columns="Unnamed: 0",inplace=True)
 # print(directors)
 
 #Get me the number of directors who did not produce any movie ever.
-print(movies["director_id"].nunique())
-print(directors["id"].nunique())
-print("directors who did not produce any movie ever:",directors["id"].nunique()-movies["director_id"].nunique())
+# print(movies["director_id"].nunique())
+# print(directors["id"].nunique())
+# print("directors who did not produce any movie ever:",directors["id"].nunique()-movies["director_id"].nunique())
 
 
 """
 Get the output similar to the following SQL query:
 select * from movies where vote_average > 7
 """
+
+# que : 
+"""
+Find out Active_years of each director (Active_years is for how long a particular director has been directing movies. 
+"""
+
+# df =pd.read_csv("directors.csv")
+# df.drop(columns="Unnamed: 0",inplace=True)
+# print(df)
+
+# director_wise =df.groupby("director_name") 
+# print(director_wise)
+
+# print(director_wise.groups)
+# print(director_wise.ngroups)
+
+# print(director_wise.get_group("James Cameron"))
+
+movies =pd.read_csv("movies.csv")
+directors =pd.read_csv("directors.csv")
+
+movies.drop(columns="Unnamed: 0",inplace=True)
+directors.drop(columns="Unnamed: 0",inplace=True)
+# print(movies)
+
+directors_wise = pd.merge(movies,directors,left_on='director_id',right_on='id')
+# print(joint)
+
+# directors_wise =directors.groupby("director_name")
+
+# print(directors_wise.groups)
+# directors_wise.get_group("James Cameron")
+# print(directors_wise)
+
+active_years = (
+    directors_wise
+    .groupby("director_name")["year"]
+    .agg(min_year="min", max_year="max")
+)
+
+active_years["active_years"] = (
+    active_years["max_year"] - active_years["min_year"]
+)
+
+print(active_years)
+
+# Get me the names & 'Active Years' of the directors who have been active in the industry for at least 30 years
