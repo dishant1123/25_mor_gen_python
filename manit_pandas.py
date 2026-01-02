@@ -281,7 +281,7 @@ directors_wise = pd.merge(movies,directors,left_on='director_id',right_on='id')
 # print(directors_wise.groups)
 # directors_wise.get_group("James Cameron")
 # print(directors_wise)
-
+"""
 active_years = (
     directors_wise
     .groupby("director_name")["year"]
@@ -293,5 +293,6 @@ active_years["active_years"] = (
 )
 
 print(active_years)
-
+"""
 # Get me the names & 'Active Years' of the directors who have been active in the industry for at least 30 years
+
