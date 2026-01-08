@@ -76,6 +76,9 @@ df =pd.merge(
     how="left"
 )
 
+df["profit"]=df["revenue"]-df["budget"]
+print(df.head())
+
 # print(df)
 
 # top 10 directors by  number  of  movies : 
@@ -95,7 +98,7 @@ plt.show()
 
 # miltiple  line graph  : 
 
-year_data =df.groupby("year")[["budget","revenue"]].mean() 
+"""year_data =df.groupby("year")[["budget","revenue"]].mean() 
 # print(year_data)
 
 plt.figure()
@@ -105,4 +108,19 @@ plt.xlabel("Year")
 plt.ylabel("Amount")
 plt.title("Budget vs Revenue") 
 plt.legend(["Budget","Revenue"])
+plt.show()
+"""
+
+# budget revenue vs profit 
+
+year_finance =df.groupby("year")[["budget","revenue","profit"]].mean() 
+
+plt.figure()
+plt.plot(year_finance.index,year_finance["budget"],color="blue")
+plt.plot(year_finance.index,year_finance["revenue"],color="red")
+plt.plot(year_finance.index,year_finance["profit"],color="green") 
+plt.xlabel("Year")
+plt.ylabel("Amount")
+plt.title("Budget , Revenue , Profit over the year")
+plt.legend(["Budget","Revenue","Profit"])
 plt.show()
