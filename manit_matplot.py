@@ -80,7 +80,7 @@ df =pd.merge(
 
 # top 10 directors by  number  of  movies : 
 
-top_10_directors =df.groupby("director_name")["title"].count().sort_values(ascending=False).head(10)
+"""top_10_directors =df.groupby("director_name")["title"].count().sort_values(ascending=False).head(10)
 print(top_10_directors)
 
 plt.figure(figsize=(10,5))
@@ -89,4 +89,20 @@ plt.title("Top 10 Directors by Number of Movies")
 plt.xlabel("Directors")
 plt.ylabel("Number of Movies")
 plt.xticks(rotation=35)
+plt.show()
+
+"""
+
+# miltiple  line graph  : 
+
+year_data =df.groupby("year")[["budget","revenue"]].mean() 
+# print(year_data)
+
+plt.figure()
+plt.plot(year_data.index,year_data["budget"],color="blue")
+plt.plot(year_data.index,year_data["revenue"],color="red")
+plt.xlabel("Year")
+plt.ylabel("Amount")
+plt.title("Budget vs Revenue") 
+plt.legend(["Budget","Revenue"])
 plt.show()
