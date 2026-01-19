@@ -4,7 +4,7 @@ data visualization
 """
 import matplotlib.pyplot as plt
 import pandas as pd 
-
+import seaborn as sns 
 """x=[1,2,3,4]
 y=[10,20,30,40]
 
@@ -62,6 +62,7 @@ plt.show()
 # pandas with matplotlib : 
 
 # top 10 movies pandas  by revenue: 
+"""
 movies = pd.read_csv("movies.csv")
 directors = pd.read_csv("directors.csv")
 
@@ -78,7 +79,7 @@ df =pd.merge(
 
 df["profit"]=df["revenue"]-df["budget"]
 print(df.head())
-
+"""
 # print(df)
 
 # top 10 directors by  number  of  movies : 
@@ -113,6 +114,7 @@ plt.show()
 
 # budget revenue vs profit 
 
+"""
 year_finance =df.groupby("year")[["budget","revenue","profit"]].mean() 
 
 plt.figure()
@@ -123,4 +125,55 @@ plt.xlabel("Year")
 plt.ylabel("Amount")
 plt.title("Budget , Revenue , Profit over the year")
 plt.legend(["Budget","Revenue","Profit"])
+plt.show()
+"""
+
+# pip install seaborn : 
+
+movies = pd.read_csv("movies.csv")
+directors = pd.read_csv("directors.csv")
+
+movies.drop(columns="Unnamed: 0",inplace=True)
+directors.drop(columns="Unnamed: 0",inplace=True)
+
+df =pd.merge(
+    movies,
+    directors,
+    left_on="director_id",
+    right_on="id",
+    how="left"
+)
+# print(df.head())
+
+#total revenue by director (bar chart)
+
+"""plt.figure(figsize=(8,5))
+sns.barplot(x="director_name",y="revenue",data=df,estimator=sum)
+plt.title("Total Revenue by Director")
+plt.show()
+
+"""
+
+# budget vs revenue (scatter plot)
+
+"""
+plt.figure(figsize=(8,5))
+sns.scatterplot(x="budget",y="revenue",data=df)
+plt.title("Budget vs Revenue")
+plt.show()
+"""
+
+# regression analysis  : budget vs revenue (scatter plot)
+
+"""plt.figure(figsize=(8,5))
+sns.regplot(x="budget",y="revenue",data=df)
+plt.title("Budget vs Revenue")
+plt.show()
+"""
+# directors wise rating distribution : 
+
+plt.figure(figsize=(8,5))
+sns.boxplot(x="director_name",y="vote_average",data=df.head(25))
+plt.xticks(rotation=45)
+plt.title("Directors wise rating distribution")
 plt.show()
